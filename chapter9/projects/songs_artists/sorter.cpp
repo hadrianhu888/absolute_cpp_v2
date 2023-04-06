@@ -1,4 +1,4 @@
-/**
+
  * @file sorter.cpp
  * @author your name (you@domain.com)
  * @brief
@@ -43,11 +43,9 @@ int main(int argc, char **argv)
 
     // sort the songs alphabetically by artist name, then by song name
     sort(songs.begin(), songs.end(), [](const string &a, const string &b) {
-        size_t separator_pos_a =
-            a.find(", "); // find the position of the separator between artist name and song name in string a
+        size_t separator_pos_a = a.find(", "); // find the position of the separator between artist name and song name in string a
         string artist_name_a = a.substr(separator_pos_a + 2); // extract the artist name from string a
-        size_t separator_pos_b =
-            b.find(", "); // find the position of the separator between artist name and song name in string b
+        size_t separator_pos_b = b.find(", "); // find the position of the separator between artist name and song name in string b
         string artist_name_b = b.substr(separator_pos_b + 2); // extract the artist name from string b
         if (artist_name_a == artist_name_b)
         {                                                      // if the artist names are the same, sort by song name
@@ -75,8 +73,7 @@ int main(int argc, char **argv)
         size_t separator_pos = song.find(", "); // find the position of the separator between artist name and song name
         string artist_name = song.substr(separator_pos + 2); // extract the artist name
         string song_name = song.substr(0, separator_pos);    // extract the song name
-        outfile << artist_name << ", " << song_name
-                << endl; // write the artist name and song name in CSV format to the output file
+        outfile << artist_name << ", " << song_name << endl; // write the artist name and song name in CSV format to the output file
     }
 
     outfile.close(); // close the output file
