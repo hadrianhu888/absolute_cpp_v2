@@ -1,0 +1,34 @@
+Artist Name, Song Name
+Carmen Suite No., Georges Bizet, 1
+Peer Gynt Suite No., Edvard Grieg, 1
+The Sorcerer's, Paul Dukas, Apprentice
+Carmina, Carl Orff, Burana
+Canon in, Johann Pachelbel, D
+The Blue, Johann Strauss II, Danube
+The Marriage of, Wolfgang Amadeus Mozart, Figaro
+The, Igor Stravinsky, Firebird
+Royal, Pyotr Ilyich Tchaikovsky, Firecrackers
+The Magic, Wolfgang Amadeus Mozart, Flute
+Jupiter, Gustav Holst, Jupiter
+Swan, Pyotr Ilyich Tchaikovsky, Lake
+Clair de, Claude Debussy, Lune
+Mars, Gustav Holst, Mars
+The, George Frideric Handel, Messiah
+Water, George Frideric Handel, Music
+Eine kleine, Wolfgang Amadeus Mozart., Nachtmusik
+The, Pyotr Ilyich Tchaikovsky, Nutcracker
+1812, Pyotr Ilyich Tchaikovsky, Overture
+William Tell, Gioachino Rossini, Overture
+The, Gustav Holst, Planets
+The Last, Gustav Holst, Post
+The Four, Antonio Vivaldi, Seasons
+The Barber of, Gioachino Rossini, Seville
+Moonlight, Ludwig van Beethoven, Sonata
+The Rite of, Igor Stravinsky, Spring
+The Nutcracker, Pyotr Ilyich Tchaikovsky, Suite
+Venus, Gustav Holst, Venus
+Brandenburg Concerto No. 3 in G, Johann Sebastian Bach, major
+Requiem in D, Wolfgang Amadeus Mozart, minor
+Symphony No. 40 in G, Wolfgang Amadeus Mozart, minor
+Symphony No. 5 in C, Ludwig van Beethoven, minor
+Symphony No. 9 in E, Antonín Dvořák, minor

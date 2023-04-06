@@ -9,7 +9,7 @@
  * 
  */
 
-#include "F:/GitHubRepos/absolute_cpp/common.hpp" // common header file
+#include "F:/GitHubRepos/absolute_cpp_v1/common.hpp" // common header file
 
 using namespace std;
 
@@ -38,3 +38,50 @@ class TriviaGame
         void show_score();
 };
 
+TriviaGame::TriviaGame()
+{
+    num_questions = 0;
+    current_question = 0;
+    score = 0;
+}
+
+TriviaGame::~TriviaGame()
+{
+    delete [] questions;
+}
+
+void TriviaGame::play()
+{
+    ask_question();
+    get_answer();
+    show_score();
+}
+
+void TriviaGame::ask_question()
+{
+    cout << questions[current_question].question << endl;
+}
+
+void TriviaGame::get_answer()
+{
+    string answer;
+    cout << "Enter your answer: ";
+    getline(cin, answer);
+    if (answer == questions[current_question].answer)
+    {
+        score += questions[current_question].points;
+    }
+    current_question++;
+}
+
+void TriviaGame::show_score()
+{
+    cout << "Your score is: " << score << endl;
+}
+
+int main(int argc, char **argv)
+{
+    TriviaGame game;
+    game.play();
+    return 0;
+}

@@ -9,7 +9,7 @@
  * 
  */
 
-#include "F:/GitHubRepos/absolute_cpp/common.hpp" // common header file
+#include "F:/GitHubRepos/absolute_cpp_v1/common.hpp" // common header file
 
 using namespace std;
 
@@ -25,7 +25,7 @@ vector <string> questions;
 vector <string> answers;
 vector <int> points;
 
-FILE *fp;
+fstream fp; 
 string line = "";
 int len = 0;
 int point_int = 0;
@@ -54,8 +54,8 @@ int main(int argc, char **argv)
 
 void open_file(void)
 {
-    fp = fopen("questions.txt", "r");
-    if (fp == NULL)
+    fp.open("questions.txt", ios::in);
+    if (!fp)
     {
         cout << "Error opening file" << endl;
         exit(1);
@@ -64,47 +64,70 @@ void open_file(void)
 
 void parse_file(void)
 {
-    while (getline(&line, &len, fp) != -1)
+    while (getline(fp, line))
     {
-        cout << line << endl;
+        len = line.length();
+        if (len > 0)
+        {
+            titles.push_back(line);
+            getline(fp, line);
+            questions.push_back(line);
+            getline(fp, line);
+            answers.push_back(line);
+            getline(fp, line);
+            points.push_back(stoi(line));
+        }
     }
 }
 
 void close_file(void)
 {
-    fclose(fp);
+    fp.close();
 }
 
-void parse_titles(void) {
-    while(getline(&line, &len, fp) != -1)
+void parse_titles(void)
+{
+    cout << "Titles:" << endl;
+    for (int i = 0; i < titles.size(); i++)
     {
-        titles.push_back(line);
+        cout << titles[i] << endl;
     }
+    cout << endl;
 }
 
-void parse_questions(void) {
-    while(getline(&line, &len, fp) != -1)
+void parse_questions(void)
+{
+    cout << "Questions:" << endl;
+    for (int i = 0; i < questions.size(); i++)
     {
-        questions.push_back(line);
+        cout << questions[i] << endl;
     }
+    cout << endl;
 }
 
-void parse_answers(void) {
-    while(getline(&line, &len, fp) != -1)
+void parse_answers(void)
+{
+    cout << "Answers:" << endl;
+    for (int i = 0; i < answers.size(); i++)
     {
-        answers.push_back(line);
+        cout << answers[i] << endl;
     }
+    cout << endl;
 }
 
-void parse_points(void) {
-    while(getline(&line, &len, fp) != -1)
+void parse_points(void)
+{
+    cout << "Points:" << endl;
+    for (int i = 0; i < points.size(); i++)
     {
-        point_int = stoi(line);
-        points.push_back(point_int);
+        cout << points[i] << endl;
     }
+    cout << endl;
 }
 
-void print_outputs(void) {
+void print_outputs(void)
+{
+    cout << "Output:" << endl;
     for (int i = 0; i < titles.size(); i++)
     {
         cout << titles[i] << endl;
@@ -112,5 +135,6 @@ void print_outputs(void) {
         cout << answers[i] << endl;
         cout << points[i] << endl;
     }
-}
+}   
 
+// Path: chapter9\projects\new_trivia_game\file_open_parse.hpp

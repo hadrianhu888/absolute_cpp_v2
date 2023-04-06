@@ -1,89 +1,145 @@
-# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/c,c++
-# Edit at https://www.toptal.com/developers/gitignore?templates=c,c++
+################################
+###########  FILES  ############
+################################
+*.pptx
+*.pdf
 
-### C ###
+################################
+########### FOLDERS ############
+################################
+build/
+html/
+
+################################
+############ C/C++ #############
+################################
 # Prerequisites
 *.d
-
-# Object files
+# Compiled Object files
+*.slo
+*.lo
 *.o
-*.ko
 *.obj
+*.ko
 *.elf
-
+# Precompiled Headers
+*.gch
+*.pch
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+# Fortran module files
+*.mod
+*.smod
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+# Executables
+*.i*86
+*.x86_64
+*.hex
+*.app
+*.stackdump
+*.exe
+*.out
 # Linker output
 *.ilk
 *.map
 *.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
 # Debug files
 *.dSYM/
 *.su
 *.idb
 *.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+################################
+########### VS CODE ############
+################################
+.vscode
+*.code-workspace
+.history
 
-### C++ ###
-# Prerequisites
+################################
+###########   VS    ############
+################################
 
-# Compiled Object files
-*.slo
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Precompiled Headers
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
 
-# Compiled Dynamic libraries
+# Mono auto generated files
+mono_crash.*
 
-# Fortran module files
-*.mod
-*.smod
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
-# Compiled Static libraries
-*.lai
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.meta
+*.iobj
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
 
-# Executables
+# Chutzpah Test files
+_Chutzpah*
 
-# End of https://www.toptal.com/developers/gitignore/api/c,c++
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
 
-# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
 
-*.dat
-*.txt
-
-*.ipch
-.vscode/
-.vs/
-.dist/
-chapter9/projects/new_trivia_game/.vs
+# Visual Studio Trace Files
+*.e2e

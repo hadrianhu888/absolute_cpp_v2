@@ -1,0 +1,12 @@
+Question, Answer, Score Value
+"What type of bulb did Thomas Edison invent?","The incandescent light bulb",30
+"What year was iTunes first released?","2001",20
+"What is the capital of Botswana?","Gaborone",10
+"Who developed the operating system Linux?","Linus Torvalds",30
+"Who created the fictional character Spider-Man?","Stan Lee",20
+"What impact did Nikola Tesla have on modern society?","Tesla was a key figure in the development of electricity and the invention of the AC motor",30
+"What year did the Apollo 11 Moon landing take place?","1969",20
+"What is the capital of Ecuador?","Quito",10
+"What is Stephen Hawking known for?","His scientific theories of black holes, relativity and quantum mechanics",30
+"What is the name of the protagonist of the Harry Potter series?","Harry Potter",20
+"What is the capital of Peru?","Lima",10
