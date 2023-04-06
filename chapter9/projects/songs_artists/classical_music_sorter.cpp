@@ -19,6 +19,8 @@
 
 using namespace std;
 
+int main(int argc, char **argv); //main function prototype
+
 void read_input_file(const string &filename, vector<string> &songs)
 {
     ifstream infile(filename); // open the input file
@@ -90,7 +92,7 @@ void sort_songs(vector<string> &songs)
     sort(songs.begin(), songs.end()); // sort the songs alphabetically by artist name, then by song name
 }
 
-int main()
+int main(int argc, char  **argv)
 {
     vector<string> songs; // vector to store the songs
 

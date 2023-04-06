@@ -17,7 +17,7 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char **argv)
 {
     ifstream infile("input.txt"); // open the input file
     if (!infile)
