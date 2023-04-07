@@ -92,7 +92,7 @@ void sort_songs(vector<string> &songs)
     sort(songs.begin(), songs.end()); // sort the songs alphabetically by artist name, then by song name
 }
 
-int main(int argc, char  **argv)
+int main_sorter()
 {
     vector<string> songs; // vector to store the songs
 
