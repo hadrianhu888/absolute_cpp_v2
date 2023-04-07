@@ -100,6 +100,5 @@ int main(int argc, char  **argv)
     format_songs(songs);                           // format the songs
     sort_songs(songs);                             // sort the songs
     write_output_file("classical_music_sorted.txt", songs); // write the output file
-
     return 0;
 }

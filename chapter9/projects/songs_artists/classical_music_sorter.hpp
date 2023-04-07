@@ -7,10 +7,10 @@
 using namespace std;
 
 // function declarations
-vector<string> readSongsFromFile(const string& filename);
-void printVectorToTerminal(const vector<string>& vec, const string& title);
-void sortSongsByArtistLastNameFirst(vector<string>& songs);
-void sortSongsBySongTitle(vector<string>& songs);
-void writeSortedSongsToOutputFile(const vector<string>& songs, const string& filename);
+void read_input_file(const string &filename, vector<string> &songs);
+void write_output_file(const string &filename, const vector<string> &songs);
+string extract_last_name_first(const string &name);
+void format_songs(vector<string> &songs);
+void sort_songs(vector<string> &songs);
 
 #endif // CLASSICAL_MUSIC_SORTER_H
