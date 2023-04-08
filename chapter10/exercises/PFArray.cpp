@@ -29,6 +29,7 @@ public:
     void emptyArray();
     int& operator[](int index);
     PFArray& operator =(const PFArray& rightSide);
+    PFArray& PFArrayCopy(const PFArray& pdfaObject);
     ~PFArray();
 };
 void testPFArray(void);
@@ -123,6 +124,17 @@ PFArray& PFArray::operator =(const PFArray& rightSide)
     return *this;
 }
 
+PFArray& PFArray::PFArrayCopy(const PFArray& pdfaObject)
+{
+    capacity = pdfaObject.capacity;
+    used = pdfaObject.used;
+    a = new int[capacity];
+    for (int i = 0; i < used; i++)
+    {
+        a[i] = pdfaObject.a[i];
+    }
+}
+
 PFArray::~PFArray()
 {
     delete [] a;
@@ -158,6 +170,22 @@ void testPDFArray(void)
     cout << "Element 9 of pfa1 is " << pfa1[9] << endl;
     cout << "Element 10 of pfa1 is " << pfa1[10] << endl;
     cout << "Element 11 of pfa1 is " << pfa1[11] << endl;
+    pfa1.emptyArray();
+    cout << "Capacity of pfa1 is " << pfa1.getCapacity() << endl;
+    cout << "Number of elements in pfa1 is " << pfa1.getNumberUsed() << endl;
+    PFArray pfa2;
+    cout << "Capacity of pfa2 is " << pfa2.getCapacity() << endl;
+    cout << "Number of elements in pfa2 is " << pfa2.getNumberUsed() << endl;
+    pfa2.addElement(1);
+    pfa2.addElement(2);
+    pfa2.addElement(3);
+    pfa2.addElement(4);
+    //copy to pfa1
+    pfa1 = pfa2;
+    cout << "Capacity of pfa1 is " << pfa1.getCapacity() << endl;
+    //use copy method
+    pfa1.PFArrayCopy(pfa2);
+    cout << "Capacity of pfa1 is " << pfa1.getCapacity() << endl;
 }
 
 int main(int argc, char **argv)
@@ -165,3 +193,12 @@ int main(int argc, char **argv)
     testPDFArray();
     return 0;
 }
+/**
+ * A destructor is a member function that is called automatically when an object is destroyed.
+ * A destructor is called when an object is destroyed, either by the end of its lifetime or by a delete expression.
+ * A destructor does not take any arguments and does not return a value.
+ * A destructor should delete the object from memory.
+ *  No overloaded assignment operator is provided for the PFArray class. This is because the default assignment operator is sufficient for this class.
+ * The default assignment operator is sufficient for this class because the PFArray class does not have any dynamically allocated memory.
+ * The overload is not needed for the destructor either because, as mentioned above, the default destructor is sufficient for this class.
+*/
