@@ -121,6 +121,7 @@ void gradeHistogram::printHistogram()
 
 gradeHistogram::~gradeHistogram()
 {
+
 }
 
 int main(int argc, char **argv)
