@@ -55,18 +55,215 @@ namespace TwoDArray
         void saveArrayElementsToFile();
         void printArrayElementFromFile();
         int get(int row, int col);
-        int add_arrays(TwoDArrayClass &twoDArrayClass);
-        int subtract_arrays(TwoDArrayClass &twoDArrayClass);
-        int multiply_arrays(TwoDArrayClass &twoDArrayClass);
-        int divide_arrays(TwoDArrayClass &twoDArrayClass);
-        int inverse_array();
-        bool operator==(TwoDArrayClass &twoDArrayClass);
-        bool operator!=(TwoDArrayClass &twoDArrayClass);
-        bool operator<(TwoDArrayClass &twoDArrayClass);
-        bool operator>(TwoDArrayClass &twoDArrayClass);
-        bool operator<=(TwoDArrayClass &twoDArrayClass);
+        int add_arrays(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        array[i][j] += twoDArrayClass.array[i][j];
+                    }
+                }
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        int subtract_arrays(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        array[i][j] -= twoDArrayClass.array[i][j];
+                    }
+                }
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        int multiply_arrays(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        array[i][j] *= twoDArrayClass.array[i][j];
+                    }
+                }
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        int divide_arrays(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        array[i][j] /= twoDArrayClass.array[i][j];
+                    }
+                }
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        int inverse_array()
+        {
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    array[i][j] = -array[i][j];
+                }
+            }
+            return 0;
+        }
+        bool operator==(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        if (array[i][j] != twoDArrayClass.array[i][j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        bool operator!=(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        if (array[i][j] != twoDArrayClass.array[i][j])
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        bool operator<(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        if (array[i][j] >= twoDArrayClass.array[i][j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        bool operator>(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        if (array[i][j] <= twoDArrayClass.array[i][j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        bool operator<=(TwoDArrayClass &twoDArrayClass)
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        if (array[i][j] > twoDArrayClass.array[i][j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         bool operator>=(TwoDArrayClass &twoDArrayClass);
-
+        {
+            if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        if (array[i][j] < twoDArrayClass.array[i][j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     };
 }
 
@@ -207,335 +404,5 @@ void TwoDArray::TwoDArrayClass::printArrayElementFromFile()
             cout << intLines[i][j] << " ";
         }
         cout << endl;
-    }
-}
-
-int TwoDArray::TwoDArrayClass::add_arrays(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                array[i][j] += twoDArrayClass.array[i][j];
-            }
-        }
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
-}
-
-int TwoDArray::TwoDArrayClass::subtract_arrays(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                array[i][j] -= twoDArrayClass.array[i][j];
-            }
-        }
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
-}
-
-int TwoDArray::TwoDArrayClass::multiply_arrays(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                array[i][j] *= twoDArrayClass.array[i][j];
-            }
-        }
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
-}
-
-int TwoDArray::TwoDArrayClass::divide_arrays(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                array[i][j] /= twoDArrayClass.array[i][j];
-            }
-        }
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
-}
-
-int TwoDArray::TwoDArrayClass::inverse_array()
-{
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < cols; j++)
-        {
-            array[i][j] = -array[i][j];
-        }
-    }
-    return 0;
-}
-
-bool TwoDArray::TwoDArrayClass::operator==(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] != twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator!=(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] != twoDArrayClass.array[i][j])
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator==(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] != twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator!=(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] != twoDArrayClass.array[i][j])
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator<(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] >= twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator>(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] <= twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator<=(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] > twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator>=(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] < twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator<(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] >= twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator>(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] <= twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool TwoDArray::TwoDArrayClass::operator<=(TwoDArrayClass &twoDArrayClass)
-{
-    if (rows == twoDArrayClass.rows && cols == twoDArrayClass.cols)
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (array[i][j] > twoDArrayClass.array[i][j])
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    else
-    {
-        return false;
     }
 }
