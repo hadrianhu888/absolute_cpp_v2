@@ -1,5 +1,5 @@
 /**
- * @file nDArray.cpp
+ * @file nDVector.cpp
  * @author your name (you@domain.com)
  * @brief
  * @version 0.1
@@ -9,21 +9,21 @@
  *
  */
 
+#include <algorithm>
+#include <cassert>
+#include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
-#include <cassert>
-#include <algorithm>
 
 using namespace std;
 
-namespace nd
+namespace nv
 {
     template <typename T>
-    class nDArray
+    class nDVector
     {
     public:
-        nDArray(const vector<int> &dimensions)
+        nDVector(const vector<int> &dimensions)
         {
             m_dimensions = dimensions;
             int size = 1;
