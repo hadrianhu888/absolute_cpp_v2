@@ -26,6 +26,7 @@ double getAverage(const vector<double> &vec);
 double getQuartiles(const vector<double> &vec);
 void displayFileOutputs(ifstream& file, const vector<double> &vec);
 double splitArray(vector<double> &vec);
+void getQuartiles(const vector<double> &vec, double &q1, double &q2, double &q3);
 int main(int argc, char **argv);
 
 void openFile(ifstream& file)
@@ -137,6 +138,36 @@ void displayQuartiles(vector<double> &vec)
     }
 }
 
+void getQuartiles(const vector<double> &vec, double &q1, double &q2, double &q3)
+{
+    size_t size = vec.size();
+
+    // Calculate the second quartile (Q2 or median)
+    if (size % 2 == 0)
+    {
+        q2 = (vec[size / 2 - 1] + vec[size / 2]) / 2;
+    }
+    else
+    {
+        q2 = vec[size / 2];
+    }
+
+    // Calculate the first (Q1) and third (Q3) quartiles
+    size_t q1_idx = size / 4;
+    size_t q3_idx = size * 3 / 4;
+
+    if (size % 4 == 0)
+    {
+        q1 = (vec[q1_idx - 1] + vec[q1_idx]) / 2;
+        q3 = (vec[q3_idx - 1] + vec[q3_idx]) / 2;
+    }
+    else
+    {
+        q1 = vec[q1_idx];
+        q3 = vec[q3_idx];
+    }
+}
+
 int main(int argc, char **argv)
 {
     ifstream file;
@@ -147,6 +178,12 @@ int main(int argc, char **argv)
     displayFileOutputs(file, numVector);
     cout << "Sum: " << getSum(numVector) << endl;
     cout << "Average: " << getAverage(numVector) << endl;
-    displayQuartiles(numVector);
+
+    double q1, q2, q3;
+    getQuartiles(numVector, q1, q2, q3);
+    cout << "First Quartile (Q1): " << q1 << endl;
+    cout << "Second Quartile (Q2 or Median): " << q2 << endl;
+    cout << "Third Quartile (Q3): " << q3 << endl;
+
     return 0;
 }
