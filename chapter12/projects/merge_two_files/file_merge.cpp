@@ -137,6 +137,23 @@ void displaySortedMergedFile(ifstream& in3)
     }
 }
 
+void writeToSortedFile(ifstream& in3, ofstream& out)
+{
+    string line;
+    vector<string> lines;
+    while (getline(in3, line))
+    {
+        lines.push_back(line);
+    }
+
+    sort(lines.begin(), lines.end());
+
+    for (const string& sorted_line : lines)
+    {
+        out << sorted_line << endl;
+    }
+}
+
 int main(int argc, char **argv)
 {
     ifstream in1;
@@ -158,6 +175,11 @@ int main(int argc, char **argv)
 
     in3.open("file3.txt"); // Reopen file3.txt to reset its position
     displaySortedMergedFile(in3); // Display the sorted contents of the merged file
+    in3.close(); // Close file3.txt
+
+    in3.open("file3.txt"); // Reopen file3.txt to reset its position
+    out.open("file3_sorted.txt"); // Open file3_sorted.txt to write the sorted contents of file3.txt
+    writeToSortedFile(in3, out); // Write the sorted contents of file3.txt to file3_sorted.txt
     in3.close(); // Close file3.txt
 
     return 0;
