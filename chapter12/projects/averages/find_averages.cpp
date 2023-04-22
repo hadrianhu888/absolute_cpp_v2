@@ -14,12 +14,17 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cmath>
+#include <cstdlib>
+#include <cstdio>
 
 using namespace std;
 
 void openFile(ifstream& file);
 void displayFileContent(ifstream& file);
-void storeFileContentInVector(ifstream& file, vector<double> &numVector);
+double getStandardDeviation(vector<double> &vec, double mean);
+double getVariance(vector<double> &vec, double mean, double stdev);
+void storeFileContentInVector(ifstream &file, vector<double> &numVector);
 void quickSortVector(vector<double> &vec);
 double getSum(const vector<double> &vec);
 double getAverage(const vector<double> &vec);
@@ -168,6 +173,26 @@ void getQuartiles(const vector<double> &vec, double &q1, double &q2, double &q3)
     }
 }
 
+double getStandardDeviation(vector<double> &vec, double mean)
+{
+    double sum = 0;
+    for (const auto &value : vec)
+    {
+        sum += pow(value - mean, 2);
+    }
+    return sqrt(sum / vec.size());
+}
+
+double getVariance(vector<double> &vec, double mean, double stdev)
+{
+    double sum = 0;
+    for (const auto &value : vec)
+    {
+        sum += pow(value - mean, 2);
+    }
+    return sum / vec.size();
+}
+
 int main(int argc, char **argv)
 {
     ifstream file;
@@ -184,6 +209,8 @@ int main(int argc, char **argv)
     cout << "First Quartile (Q1): " << q1 << endl;
     cout << "Second Quartile (Q2 or Median): " << q2 << endl;
     cout << "Third Quartile (Q3): " << q3 << endl;
+    cout << "Standard Deviation " << getStandardDeviation(numVector, getAverage(numVector)) << endl;
+    cout << "Variance " << getVariance(numVector, getAverage(numVector), getStandardDeviation(numVector, getAverage(numVector))) << endl;
 
     return 0;
 }
