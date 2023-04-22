@@ -51,6 +51,7 @@ int main(int argc, char **argv)
           << "124.156156"
           << "    "
           << "-125.1514566" << endl;
+    messy << "-10.24554     123151.454" << endl;
     messy.close();
 
     //reorganize the messy file by writing to neat.txt
