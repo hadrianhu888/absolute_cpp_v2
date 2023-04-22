@@ -1,0 +1,4 @@
+One programming advice: Break complex problems down into smaller, manageable tasks. This will help you understand the problem better, make your code more modular, and simplify debugging and maintenance.
+Be careful with C pointers.
+For output files, remember to use ofstream in C++.
+Be careful with references in C++. Referneces are by parameter address. A pointer does something similar to references in C++, except references are safer--since they do not directly manipulate memory addresses.
