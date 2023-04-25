@@ -12,11 +12,11 @@
 
 using namespace std;
 
-#include "F:/GitHubRepos/llvm-project/clang/ASTMatchers/ASTMatchFinder.h"
-#include "F:/GitHubRepos/llvm-project/clang/ASTMatchers/ASTMatchers.h"
-#include "F:/GitHubRepos/llvm-project/clang/Tooling/CommonOptionsParser.h"
-#include "F:/GitHubRepos/llvm-project/clang/Tooling/Tooling.h"
-#include "F:/GitHubRepos/llvm-project/llvm/include/Support/CommandLine.h"
+#include <clang/ASTMatchers/ASTMatchFinder.h>
+#include <clang/ASTMatchers/ASTMatchers.h>
+#include <clang/Tooling/CommonOptionsParser.h>
+#include <clang/Tooling/Tooling.h>
+#include <llvm/Support/CommandLine.h>
 
 using namespace clang;
 using namespace clang::ast_matchers;

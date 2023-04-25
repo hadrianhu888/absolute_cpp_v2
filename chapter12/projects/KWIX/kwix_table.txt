@@ -1,0 +1,9 @@
+memory: The ability to store and retrieve information.
+class: A user-defined type that contains data and functions.
+inheritance: A mechanism for creating a new class from an existing class.
+overloading: The ability to use the same name for different functions.
+function: A named sequence of statements.
+exception: An object that represents an error.
+compiler: A program that translates a high-level language program into machine code.
+optimization: The process of making a program more efficient.
+Total unique technical terms: 8

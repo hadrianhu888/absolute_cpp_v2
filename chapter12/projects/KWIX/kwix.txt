@@ -1,0 +1,11 @@
+Keyword	Context
+Class	In C++ programming, a class is a blueprint for creating objects, representing data and methods.
+Object	Objects are instances of a class, containing data members and member functions.
+Inheritance	Inheritance allows a class to inherit properties and methods from another class.
+Polymorphism	Polymorphism enables a function or an operator to have multiple implementations.
+Encapsulation	Encapsulation is the bundling of data and functions that operate on that data within a class.
+Constructor	Constructors are special member functions that are executed whenever a new object is created.
+Destructor	Destructors are special member functions called when an object goes out of scope or is deleted.
+Overloading	Overloading allows multiple functions or operators to have the same name but different parameters.
+Template	Templates are a way to create generic functions or classes that work with different data types.
+Standard Library	The C++ Standard Library is a collection of classes, functions, and templates for common tasks.
