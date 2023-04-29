@@ -1,0 +1,32 @@
+Of course! I have randomized the point values for each question in the trivia file:
+<10>
+<1. What is the largest planet in our solar system?>
+<Answer: Jupiter>
+<Points: 15>
+<2. Who is the author of the famous novel "1984"?>
+<Answer: George Orwell>
+<Points: 7>
+<3. Which element has the atomic number 1 on the periodic table?>
+<Answer: Hydrogen>
+<Points: 20>
+<4. What is the capital city of Australia?>
+<Answer: Canberra>
+<Points: 10>
+<5. Who painted the famous artwork, "The Starry Night"?>
+<Answer: Vincent van Gogh>
+<Points: 12>
+<6. Which mammal is known as the largest animal ever to have lived on Earth?>
+<Answer: Blue whale>
+<Points: 25>
+<7. In which country was the Olympic Games first held?>
+<Answer: Greece>
+<Points: 5>
+<8. Which inventor is credited with inventing the telephone?>
+<Answer: Alexander Graham Bell>
+<Points: 18>
+<9. What is the smallest unit of life in living organisms?>
+<Answer: Cell>
+<Points: 8>
+<10. Which scientist is known for his theory of general relativity?>
+<Answer: Albert Einstein>
+<Points: 30>

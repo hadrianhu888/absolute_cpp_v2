@@ -12,7 +12,7 @@
 
 using namespace std;
 
-string inFIle = "words.txt";
+string inFile = "words.txt";
 string outFile = "vowels.txt";
 
 int main(int argc, char **argv);
@@ -27,16 +27,17 @@ bool isVowel(char word);
 bool isVowel(char word[]);
 void countVowelWords(ifstream &file, int &vowelWords);
 void displayOnlyOneRandomLongestVowelWord(string longestVowelWordString);
+void findLongestConsecutiveVowelWord(ifstream &file, string &longestConsecutiveVowelWord, int &longestConsecutiveVowelWordLength);
+void displayLongestConsecutiveVowelWord(ifstream &file, string longestConsecutiveVowelWord, int longestConsecutiveVowelWordLength);
 
-
-    void openFile(ifstream &file)
+void openFile(ifstream &file)
 {
-    file.open(inFIle.c_str());
+    file.open(inFile.c_str());
     while (file.fail())
     {
         cout << "Error opening file. Try again: ";
-        cin >> inFIle;
-        file.open(inFIle.c_str());
+        cin >> inFile;
+        file.open(inFile.c_str());
     }
 }
 void displayFile(ifstream &file)
@@ -138,10 +139,43 @@ void displayOnlyOneRandomLongestVowelWord(string longestVowelWordString)
     }
     cout << "Random longest vowel word: " << word << endl;
 }
+void findLongestConsecutiveVowelWord(ifstream &file,
+                                     string &longestConsecutiveVowelWord,
+                                     int &longestConsecutiveVowelWordLength)
+{
+    string word;
+    while (file >> word)
+    {
+        int consecutiveVowelWordLength = 0;
+        for (int i = 0; i < word.length(); i++)
+        {
+            if (isVowel(word[i]))
+            {
+                consecutiveVowelWordLength++;
+            }
+            else
+            {
+                consecutiveVowelWordLength = 0;
+            }
+            if (consecutiveVowelWordLength > longestConsecutiveVowelWordLength)
+            {
+                longestConsecutiveVowelWordLength = consecutiveVowelWordLength;
+                longestConsecutiveVowelWord = word;
+            }
+        }
+    }
+}
+void displayLongestConsecutiveVowelWord(ifstream &file, string longestConsecutiveVowelWord, int longestConsecutiveVowelWordLength)
+{
+    cout << "Longest consecutive vowel word: " << longestConsecutiveVowelWord << endl;
+    cout << "Longest consecutive vowel word length: " << longestConsecutiveVowelWordLength << endl;
+}
 int main(int argc, char **argv)
 {
     ifstream file;
     ofstream vowelsFile;
+    string longestConsecutiveVowelWord;
+    int longestConsecutiveVowelWordLength;
     openFile(file);
     displayFile(file);
     file.close();
@@ -174,6 +208,12 @@ int main(int argc, char **argv)
     file.close();
     openFile(file);
     displayOnlyOneRandomLongestVowelWord(longestVowelWordString);
+    file.close();
+    openFile(file);
+    findLongestConsecutiveVowelWord(file, longestConsecutiveVowelWord, longestConsecutiveVowelWordLength);
+    file.close();
+    openFile(file);
+    displayLongestConsecutiveVowelWord(file, longestConsecutiveVowelWord, longestConsecutiveVowelWordLength);
     file.close();
     return 0;
 }
