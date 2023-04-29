@@ -140,6 +140,40 @@ bool getUserAnswer(TrivialGame &trivialGame, string &userAnswer)
     return true;
 }
 
+void storeHighScores(int points)
+{
+    ofstream file;
+    file.open("high_scores.txt", ios::app);
+    file << points << endl;
+    file.close();
+}
+
+int resetScoresPerNewGame(int points)
+{
+    cout << "Would you like to reset the high scores? (y/n): ";
+    char resetScores;
+    cin >> resetScores;
+    if (resetScores == 'y' || resetScores == 'Y')
+    {
+        ofstream file;
+        file.open("high_scores.txt");
+        file.close();
+        points = 0;
+    }
+    return points;
+}
+
+void appendHighScoresToFile(vector<int> &highScores)
+{
+    ofstream file;
+    file.open("high_scores.txt", ios::app);
+    for (int i = 0; i < highScores.size(); i++)
+    {
+        file << highScores[i] << endl;
+    }
+    file.close();
+}
+
 int main()
 {
     ifstream file;
@@ -148,6 +182,8 @@ int main()
     vector<TrivialGame> trivialGames;
     storeQuestions(file, trivialGames);
     file.close();
+
+    vector<int> highScores;
 
     srand(time(NULL));
     string userAnswer;
@@ -180,6 +216,11 @@ int main()
     }
 
     cout << "Thanks for playing! Your final score is: " << totalPoints << endl;
+
+    storeHighScores(totalPoints);
+    appendHighScoresToFile(highScores);
+
+    totalPoints = resetScoresPerNewGame(totalPoints);
 
     return 0;
 }
