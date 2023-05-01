@@ -85,19 +85,42 @@ namespace derived
     };
 } // namespace derived
 
+namespace derived
+{
+class TitledEmployee : public SalariedEmployee
+{
+        private:
+            string title;
+
+        public:
+            TitledEmployee();
+            TitledEmployee(const string &the_name,
+                           const string &the_ssn,
+                           double the_weekly_salary,
+                           const string &the_title);
+            void set_title(const string &new_title);
+            string get_title() const;
+            void print_check();
+};
+} // namespace derived
+
+
 int main(int argc, char **argv);
 
 int main(int argc, char **argv)
 {
     derived::HourlyEmployee joe("Mighty Joe", "123456789", 20.50, 40);
     derived::SalariedEmployee boss("Mr. Big Shot", "987654321", 10500);
+    derived::ContractorEmployee john("John Smith", "111111111", 60, 40);
+    derived::TitledEmployee jane("Jane Doe", "222222222", 10000, "CEO");
 
-    cout << "Check for " << joe.get_name() << " for " << joe.get_hours() << " hours.\n";
     joe.print_check();
     cout << endl;
-
-    cout << "Check for " << boss.get_name() << endl;
     boss.print_check();
+    cout << endl;
+    john.print_check();
+    cout << endl;
+    jane.print_check();
     cout << endl;
 
     return 0;
@@ -271,4 +294,35 @@ void derived::ContractorEmployee::print_check()
     cout << "Employee Number: " << get_ssn() << endl;
     cout << "Contractor Employee. \nHours worked: " << hours << " Rate: " << hourly_rate << " Pay: " << get_net_pay() << endl;
     cout << "_________________________________________________\n";
+}
+
+derived::TitledEmployee::TitledEmployee() : SalariedEmployee(), title("No title yet")
+{
+    // empty
+}
+
+derived::TitledEmployee::TitledEmployee(const string &the_name, const string &the_ssn, double the_weekly_salary, const string &the_title) : SalariedEmployee(the_name, the_ssn, the_weekly_salary), title(the_title)
+{
+    // empty
+}
+
+void derived::TitledEmployee::print_check()
+{
+    set_net_pay(get_salary());
+
+    cout << "\n________________________________________________\n";
+    cout << "Pay to the order of " << get_name() << endl;
+    cout << "The sum of " << get_net_pay() << " Dollars\n";
+    cout << "________________________________________________\n";
+    cout << "Check Stub: NOT NEGOTIABLE\n";
+    cout << "Employee Number: " << get_ssn() << endl;
+    cout << "Titled Employee. Title: " << title << " Regular Pay: " << get_salary() << endl;
+    cout << "_________________________________________________\n";
+}
+
+void showEmployeeData(base::Employee &object)
+{
+    cout << "Name: " << object.get_name() << endl;
+    cout << "SSN: " << object.get_ssn() << endl;
+    cout << "Net Pay: " << object.get_net_pay() << endl;
 }
