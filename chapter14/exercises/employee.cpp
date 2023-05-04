@@ -326,3 +326,16 @@ void showEmployeeData(base::Employee &object)
     cout << "SSN: " << object.get_ssn() << endl;
     cout << "Net Pay: " << object.get_net_pay() << endl;
 }
+
+/**
+ * @brief The reason why SalariedEmployee inherits the functions getName and printCheck
+ *  is because the superclass already has the functions defined. The derived classes
+ *  does not need to override these functions from the base class.
+ */
+
+/**
+ * @brief An overloaded and copy constructor for the base class are already defined.
+ * The derived classes should override this constructor and copy constructor, even if they are not defined in the
+ * derived classes.
+ *
+ */
