@@ -15,15 +15,14 @@
 #ifdef __cplusplus
 
 /**
- * Also use this file in C code with preprocessor directive for C code usage 
- * 
+ * Also use this file in C code with preprocessor directive for C code usage
+ *
  */
 
 #include <algorithm>
 #include <array>
 #include <atomic>
 #include <bitset>
-#include <cassert>
 #include <cassert>
 #include <cctype>
 #include <cerrno>
@@ -74,10 +73,10 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
-#include <cstdlib> 
-#include <cstdio> 
+#include <cstdlib>
+#include <cstdio>
 #include <ctime>
-#include <ostream> 
+#include <ostream>
 #include <istream>
 
 using namespace std;
