@@ -79,9 +79,43 @@ public:
     ~Doctor() {}
 };
 
+class Patient
+{
+protected:
+    string name;
+    string address;
+    string telephone;
+    string emergencyContact;
+public:
+    Patient(const string& name, const string& address, const string& telephone, const string& emergencyContact)
+        : name(name), address(address), telephone(telephone), emergencyContact(emergencyContact) {}
+
+    const string& getName() const { return name; }
+    void setName(const string& name) { this->name = name; }
+
+    const string& getAddress() const { return address; }
+    void setAddress(const string& address) { this->address = address; }
+
+    const string& getTelephone() const { return telephone; }
+    void setTelephone(const string& telephone) { this->telephone = telephone; }
+
+    const string& getEmergencyContact() const { return emergencyContact; }
+    void setEmergencyContact(const string& emergencyContact) { this->emergencyContact = emergencyContact; }
+
+    virtual void print() const {
+        cout << "Name: " << name << endl;
+        cout << "Address: " << address << endl;
+        cout << "Telephone: " << telephone << endl;
+        cout << "Emergency Contact: " << emergencyContact << endl;
+    }
+    ~Patient() {}
+};
+
 int main(int argc, char **argv)
 {
     Doctor d("Dr. John Doe", 100000, "Pediatrics", "123456789");
     d.printCheck();
+    Patient p("Jane Doe", "123 Main St.", "555-1234", "John Doe");
+    p.print();
     return 0;
 }
