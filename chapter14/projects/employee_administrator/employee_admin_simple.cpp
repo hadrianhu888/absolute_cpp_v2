@@ -8,9 +8,7 @@
  * @copyright Copyright (c) 2023
  *
  */
-
-#include <iostream>
-#include <string>
+#include "F:\GitHubRepos\absolute_cpp_v2\common.hpp"
 
 using namespace std;
 
