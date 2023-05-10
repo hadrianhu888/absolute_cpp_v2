@@ -11,14 +11,39 @@
 
 #include "F:/GitHubRepos/absolute_cpp_v2/common.hpp"
 
-#include "figure.h"
-#include "circle.h"
-#include "rectangle.h"
-#include "triangle.h"
+#include "figure.cpp"
+#include "circle.cpp"
+#include "rectangle.cpp"
+#include "triangle.cpp"
 
 using namespace std;
 
 int main(int argc, char **argv);
+
+void drawFigures(Figure* figArray[], int size);
+
+void drawFigures(Figure* figArray[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        figArray[i]->draw();
+    }
+}
+
+string drawCircleObject(Circle* circle)
+{
+    return circle->drawCircleGraphically();
+}
+
+string drawRectangleObject(Rectangle* rectangle)
+{
+    return rectangle->drawRectangleGraphically();
+}
+
+string drawTriangleObject(Triangle* triangle)
+{
+    return triangle->drawTriangleGraphically("*");
+}
 
 int main(int argc, char **argv)
 {
@@ -40,6 +65,19 @@ int main(int argc, char **argv)
     {
         delete figArray[i];
     }
+
+    /**
+     * @brief draw graphically
+     *
+     */
+
+    Circle circle(2, 3, 5);
+    Rectangle rectangle(2, 3, 5, 7);
+    Triangle triangle(2, 3, 5, 7);
+
+    cout << circle.drawCircleGraphically() << endl;
+    cout << rectangle.drawRectangleGraphically() << endl;
+    cout << triangle.drawTriangleGraphically(" * ") << endl;
 
     return 0;
 }

@@ -78,6 +78,9 @@
 #include <ctime>
 #include <ostream>
 #include <istream>
+#include <windows.h>
+#include <conio.h>
+#include <io.h>
 
 using namespace std;
 using namespace std::chrono;
