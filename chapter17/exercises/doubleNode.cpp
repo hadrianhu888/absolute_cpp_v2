@@ -121,6 +121,75 @@ void deleteNodeAfter(DoubleNode<T> *head, T data)
     }
 }
 
+/* typedef struct DoublyLinkedIntNodePtr
+{
+    int data;
+    DoublyLinkedIntNodePtr *next;
+    DoublyLinkedIntNodePtr *back;
+} DoublyLinkedIntNode; */
+
+class DoublyLinkedIntNodePtr
+{
+public:
+    explicit DoublyLinkedIntNodePtr(int data = 0,
+                                    DoublyLinkedIntNodePtr *next = nullptr,
+                                    DoublyLinkedIntNodePtr *back = nullptr)
+        : data(data), next(next), back(back)
+    {
+    }
+    int getData() const
+    {
+        return data;
+    }
+    DoublyLinkedIntNodePtr *getNext() const
+    {
+        return next;
+    }
+    DoublyLinkedIntNodePtr *getBack() const
+    {
+        return back;
+    }
+    void setData(int data)
+    {
+        this->data = data;
+    }
+    void setNext(DoublyLinkedIntNodePtr *next)
+    {
+        this->next = next;
+    }
+    void setBack(DoublyLinkedIntNodePtr *back)
+    {
+        this->back = back;
+    }
+
+private:
+    int data;
+    DoublyLinkedIntNodePtr *next;
+    DoublyLinkedIntNodePtr *back;
+};
+
+void insert(DoublyLinkedIntNodePtr *afterMe, int theData)
+{
+    DoublyLinkedIntNodePtr *newNode = new DoublyLinkedIntNodePtr(theData);
+    newNode->setNext(afterMe->getNext());
+    newNode->setBack(afterMe);
+    if (afterMe->getNext() != nullptr)
+    {
+        afterMe->getNext()->setBack(newNode);
+    }
+    afterMe->setNext(newNode);
+}
+
+void print(DoublyLinkedIntNodePtr *node)
+{
+    while (node != nullptr)
+    {
+        cout << node->getData() << " ";
+        node = node->getNext();
+    }
+    cout << endl;
+}
+
 int main(int argc, char const *argv[])
 {
     DoubleNode<int> *head = new DoubleNode<int>(1);
@@ -207,5 +276,41 @@ int main(int argc, char const *argv[])
     }
     cout << endl;
     printList(head);
+    DoublyLinkedIntNodePtr node;
+    node.setData(1);
+    insert(&node, 2);
+    insert(&node, 3);
+    insert(&node, 4);
+    insert(&node, 5);
+    insert(&node, 6);
+    insert(&node, 7);
+    insert(&node, 8);
+    print(&node);
     return 0;
 }
+
+/**
+ * @brief For a large array and a large list holding the same types of objects,
+ * inserting a new object at a known location into the middle of a linked list
+ * comapred to insertion into an array is much faster. This is because the array
+ * insertion algorithm must shift all of the elements after the insertion point.
+ * The linked list insertion algorithm only needs to change the pointers of the
+ * nodes before and after the insertion point.
+ */
+
+/**
+ * @brief A doubly linked list allows us to implement
+ * a deleteNodeBefore function. This function would be
+ * similar to the deleteNodeAfter function, but it would
+ * delete the node before the node passed in as a parameter.
+ *
+ */
+
+/**
+ * @brief A singly linked list does not allow us to implement
+ * a deleteNodeBefore function. This is because we cannot
+ * access the node before the node passed in as a parameter.
+ * We can only access the node after the node passed in as
+ * a parameter.
+ *
+ */
