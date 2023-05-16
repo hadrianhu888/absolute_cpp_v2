@@ -163,6 +163,87 @@ class HashTable
         }
 };
 
+template <class T>
+class Student
+{
+    private:
+        string name;
+        int age;
+        int rollNo;
+        int nineDigitStudentNumber;
+
+    public:
+        Student()
+        {
+
+        }
+        Student(string name, int age, int rollNo, int nineDigitStudentNumber)
+        {
+            this->name = name;
+            this->age = age;
+            this->rollNo = rollNo;
+            this->nineDigitStudentNumber = nineDigitStudentNumber;
+        }
+        string getName()
+        {
+            return name;
+        }
+
+        void setName(string name)
+        {
+            this->name = name;
+        }
+
+        int getAge()
+        {
+            return age;
+        }
+
+        void setAge(int age)
+        {
+            this->age = age;
+        }
+
+        int getRollNo()
+        {
+            return rollNo;
+        }
+
+        void setRollNo(int rollNo)
+        {
+            this->rollNo = rollNo;
+        }
+
+        int getNineDigitStudentNumber()
+        {
+            return nineDigitStudentNumber;
+        }
+
+        void setNineDigitStudentNumber(int nineDigitStudentNumber)
+        {
+            this->nineDigitStudentNumber = nineDigitStudentNumber;
+        }
+
+        bool operator==(const Student &other)
+        {
+            return name == other.name && age == other.age && rollNo == other.rollNo && nineDigitStudentNumber  == other.nineDigitStudentNumber;
+        }
+};
+
+void generateHashTable(int size, int data[])
+{
+    HashTable<int> *table = new HashTable<int>(size);
+    for (int i = 0; i < size; i++)
+        table->insert(data[i]);
+    table->display();
+    table->generateRandomHash(size);
+    table->remove(5);
+    table->display();
+    cout << table->search(5) << endl;
+    cout << table->search(6) << endl;
+    delete table;
+}
+
 int main(int argc, char **argv)
 {
     HashTable<int> *table = new HashTable<int>(10);
@@ -175,5 +256,12 @@ int main(int argc, char **argv)
     cout << table->search(5) << endl;
     cout << table->search(6) << endl;
     delete table;
+    Student<int> *student = new Student<int>("John", 20, 1, 123456789);
+    cout << student->getName() << endl;
+    cout << student->getAge() << endl;
+    cout << student->getRollNo() << endl;
+    cout << student->getNineDigitStudentNumber() << endl;
+    generateHashTable(10, new int[10]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+    delete student;
     return 0;
 }
