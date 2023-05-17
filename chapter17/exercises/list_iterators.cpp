@@ -19,10 +19,12 @@ class Node
 public:
     T data;
     Node<T> *next;
+    Node<T> *last;
 
     Node(T data)
     {
         this->data = data;
+        this->last = NULL;
         this->next = NULL;
     }
 };
@@ -302,6 +304,36 @@ class Tree
             return false;
         }
 
+        bool preOrder(Node<T> *root)
+        {
+            if (root == NULL)
+                return false;
+
+            cout << root->data << " ";
+            preOrder(root->next);
+            preOrder(root->last);
+        }
+
+        bool inOrder(Node<T> *root)
+        {
+            if (root == NULL)
+                return false;
+
+            inOrder(root->next);
+            cout << root->data << " ";
+            inOrder(root->last);
+        }
+
+        bool postOrder(Node<T> *root)
+        {
+            if (root == NULL)
+                return false;
+
+            postOrder(root->next);
+            postOrder(root->last);
+            cout << root->data << " ";
+        }
+
         ~Tree()
         {
             Node<T> *temp = head;
@@ -437,6 +469,12 @@ int main()
     t.insert(12);
     t.printTree(5) ? cout << "5 is in tree" << endl : cout << "5 is not in tree" << endl;
     t.sortTree(5) ? cout << "5 is in tree" << endl : cout << "5 is not in tree" << endl;
+    t.preOrder(t.head);
+    cout << endl;
+    t.inOrder(t.head);
+    cout << endl;
+    t.postOrder(t.head);
+    cout << endl;
     t.print();
     // test graph
     Graph<int> g;
