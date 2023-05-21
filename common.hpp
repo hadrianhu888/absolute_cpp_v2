@@ -81,6 +81,18 @@
 #include <windows.h>
 #include <conio.h>
 #include <io.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/timeb.h>
+#include <direct.h>
+#include <process.h>
+#include <errno.h>
+#include <tchar.h>
+#include <stdio.h>
+#include <list>
+#include <iterator>
+#include <iostream>
 
 using namespace std;
 using namespace std::chrono;
