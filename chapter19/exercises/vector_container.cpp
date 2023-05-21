@@ -91,7 +91,6 @@ int main(int argc, char **argv)
     {
         *p3 = tolower(*p3);
     }
-    return 0;
     vector<char> :: iterator p4;
     for(p4 = upper_case_letters.begin(); p4 != upper_case_letters.end(); p4++)
     {
@@ -100,6 +99,7 @@ int main(int argc, char **argv)
         cout << *p4 << " ";
         p4--;
     }
+    return 0;
 }
 
 /**

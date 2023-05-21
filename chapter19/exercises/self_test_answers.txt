@@ -1,0 +1,40 @@
+The stack template has the following iterators:
+Stack is last in, first out, so backward iterators
+are not supported.
+
+The queue iterator has the following iterators:
+Queue is first in, first out, so forward iterators
+are not supported.
+
+If s is a stack<char> and q is a queue<char>, then the value of s.pop() is the same as q.pop().
+
+The elements in a set are stored in sorted order, because the set is implemented as a binary search tree.
+
+The set can have elements of any type, as long as the type has a comparison operator.
+
+If s is a set<char>, then the value of s.pop() is the same as s.remove(). s.find('A') returns an iterator to the first element in the set that is equal to 'A'.
+
+When the following code is executed:
+map<int, string> mymap;
+mymap[5] = "c++";
+cout << mymap[4] << endl;
+
+The output is:
+c++
+
+The map can have elements of any type, as long as the type has a comparison operator.
+
+The running time for T(N) = aN+b is O(N).
+This is because the running time for T(N) = aN+b is O(N), since aN is the largest term in the equation.
+
+For any bases in logarithms a, and b, loga(N) = logb(N) / logb(a).
+The running time is O(NlogN) because the running time for T(N) = NlogN is O(NlogN), since NlogN is the largest term in the equation.
+
+The random_shuffle template function can be used to shuffle the elements in a vector, in a list or in a deque.
+
+The copy template function can be used to copy the elements in a vector, in a list or in a deque.
+
+Set-union template require that the elements in the two sets are sorted, this is because the set-union template function uses the binary search algorithm to find the elements in the two sets.
+This is different from the mathematical set-union operation, which does not require that the elements in the two sets are sorted.
+
+The set-intersection template require that the elements in the two sets are sorted, this is because the set-intersection template function uses the binary search algorithm to find the elements in the two sets.

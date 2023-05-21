@@ -29,6 +29,18 @@ int main(int argc, char **argv)
         container.pop();
     }
     cout << endl;
+    stack<char> s;
+    s.push('a');
+    s.push('b');
+    s.push('c');
+    s.push('d');
+    cout << "Here is what is in the container: " << endl;
+    while(!s.empty())
+    {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << endl;
 /*     stack<int>::iterator p;
     for(p = container.begin(); p != container.end(); p++)
     {
