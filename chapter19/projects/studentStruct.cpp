@@ -58,9 +58,13 @@ int main(int argc, char **argv)
     findMaxGrade(students);
     findMinGrade(students);
     findAverageGrade(students);
+    cout << "Number of students: " << students.size() << endl;
     student_names = getStudentNames(students);
+    cout << "Student names: " << endl;
     student_grades = getStudentGrades(students);
+    cout<<  "Passing grade: " << passing_grade << endl;
     passing_students = getPassingGrades(students);
+    cout<<  "Failing grade: " << failing_grade << endl;
     failing_students = getFailingGrades(students);
     emptyStudentVector(students);
 }
@@ -163,7 +167,13 @@ vector<string> getPassingGrades(vector<Student> &students)
             passing_students.push_back(student.name);
         }
     }
-    printStudents(students);
+    /**
+     * @brief print students that passed the class
+     *
+     */
+    for(auto &student : passing_students){
+        cout << student << endl;
+    }
     return passing_students;
 }
 
@@ -177,7 +187,9 @@ vector<string> getFailingGrades(vector<Student> &students)
             failing_students.push_back(student.name);
         }
     }
-    printStudents(students);
+    for(auto &student : failing_students){
+        cout << student << endl;
+    }
     return failing_students;
 }
 
