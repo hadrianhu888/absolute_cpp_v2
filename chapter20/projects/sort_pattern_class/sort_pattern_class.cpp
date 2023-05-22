@@ -624,4 +624,23 @@ int main()
 
     mySort.selectionSort();
     cout << "Array after Selection Sort: " << endl;
-    mySort.display();19
+    mySort.display();
+
+    // Reset the array
+    for (int i = 0; i < ARRAY_SIZE; i++)
+        mySort.array[i] = array[i];
+
+    mySort.insertionSort();
+    cout << "Array after Insertion Sort: " << endl;
+    mySort.display();
+
+    // Reset the array
+    for (int i = 0; i < ARRAY_SIZE; i++)
+        mySort.array[i] = array[i];
+
+    mySort.mergeSort();
+    cout << "Array after Merge Sort: " << endl;
+    mySort.display();
+
+    return 0;
+}
