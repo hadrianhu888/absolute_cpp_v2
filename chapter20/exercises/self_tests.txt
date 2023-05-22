@@ -1,0 +1,30 @@
+Is a template function definition a pattern?
+Not necassarily.
+With quick-sort, the fastest running time is achieved when the pivot is the median of the array.  This is not a pattern, but a specific value.
+The fully sorted array has the fastest running time for quick-sort algorithm.
+If an array is reverse sorted, then the time to sort will be slower in quick-sort.
+
+Circle class diagram
+- template<class T>
+- T radius
+- T area()
+- T circumference()
+- T diameter()
+- T pi
+
+- Circle<int> c1(5);
+- Circle<float> c2(5.0);
+- Circle<double> c3(5.0);
+
+IntNode class diagram
+- template<class T>
+- T data
+- IntNode<T> *next
+
+- IntNode<int> *head;
+- IntNode<float> *head;
+- IntNode<double> *head;
+
+- IntNode<int> *head = new IntNode<int>(5);
+- IntNode<float> *head = new IntNode<float>(5.0);
+- IntNode<double> *head = new IntNode<double>(5.0);
