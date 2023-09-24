@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TestCppUnitTest",
+    "\\TestCppUnitTest\\build",
+    "\\TestCppUnitTest\\build\\CMakeFiles",
+    "\\TestCppUnitTest\\build\\CMakeFiles\\3.25.0-rc1",
+    "\\TestCppUnitTest\\build\\CMakeFiles\\CMakeScratch",
+    "\\TestCppUnitTest\\build\\CMakeFiles\\pkgRedirects",
+    "\\TestCppUnitTest\\obj",
+    "\\TestCppUnitTest\\x64",
+    "\\TestCppUnitTest\\x64\\Debug"
   ],
+  "SelectedNode": "\\TestCppUnitTest\\CMakeLists.txt",
   "PreviewInSolutionExplorer": false
 }
